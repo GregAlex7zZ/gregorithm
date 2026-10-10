@@ -41,6 +41,9 @@ dev = [
   "psutil>=5",
   "pandas>=2.2",
   "numba>=0.59",
+  "plotly>=5",
+  "anywidget>=0.9",
+  "ipywidgets>=8",
 ]
 
 [tool.hatch.build.targets.wheel]

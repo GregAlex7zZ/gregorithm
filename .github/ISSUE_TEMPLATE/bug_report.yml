@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible software or scientific-behavior problem.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach private or identifying measurement files.
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+      description: Describe the observed and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal reproducible example
+      description: Prefer a small synthetic example.
+      render: python
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: gregorithm and Python versions
+    validations:
+      required: true
+  - type: dropdown
+    id: scientific
+    attributes:
+      label: Does this affect a scientific calculation?
+      options: ["Yes", "No", "Unsure"]
+    validations:
+      required: true

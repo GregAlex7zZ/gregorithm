@@ -34,7 +34,14 @@ fast = ["numba>=0.59"]
 notebook = ["pandas>=2.2", "jupyterlab>=4"]
 plot = ["plotly>=5", "anywidget>=0.9", "ipywidgets>=8"]
 plot_static = ["matplotlib>=3.8"]
-dev = ["pytest>=8", "ruff>=0.11", "build>=1.2", "psutil>=5", "pandas>=2.2"]
+dev = [
+  "pytest>=8",
+  "ruff>=0.11",
+  "build>=1.2",
+  "psutil>=5",
+  "pandas>=2.2",
+  "numba>=0.59",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/gregorithm"]

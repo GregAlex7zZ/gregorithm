@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use gregorithm in your research, please cite it as below."
+title: "gregorithm"
+type: software
+version: 0.1.0
+authors:
+  - family-names: "Gregucci"
+    given-names: "Alessandro"
+license: MIT
+abstract: >-
+  A Python library for streaming analysis of galvanostatic battery-cycling data: canonical
+  import, cycle and step identification, Capacity, C-rate, DCIR, dQ/dV and GITT/ICI diffusion
+  coefficients with immutable, fingerprinted results.
+keywords:
+  - battery
+  - electrochemistry
+  - galvanostatic cycling
+  - DCIR
+  - dQ/dV
+  - GITT
+  - ICI
+references:
+  - type: article
+    title: "Simple and Comparable Computation of Incremental Capacity Curves"
+    authors:
+      - family-names: "Flores"
+        given-names: "Eibar"
+      - family-names: "Clark"
+        given-names: "Simon"
+    journal: "Journal of The Electrochemical Society"
+    volume: 173
+    start: "120520"
+    year: 2026
+    doi: "10.1149/1945-7111/ae7e5c"
+    notes: "Source of the histogram dQ/dV methods and of the voltage reconstruction."

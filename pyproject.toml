@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling>=1.32,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gregorithm"
+dynamic = ["version"]
+description = "Streaming analysis of galvanostatic battery-cycling data: Capacity, C-rate, DCIR, dQ/dV and GITT/ICI"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Alessandro Gregucci" }]
+maintainers = [{ name = "Alessandro Gregucci" }]
+keywords = ["battery", "electrochemistry", "galvanostatic", "cycling", "capacity", "dcir", "dqdv", "gitt", "ici", "diffusion"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=2.5,<3",
+  "pyarrow>=25,<27",
+  "scipy>=1.16,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.3,<2",
+  "mypy>=2.4,<3",
+  "pre-commit>=4.7,<5",
+  "pytest>=9,<10",
+  "ruff>=0.16,<0.17",
+]
+notebooks = [
+  "ipykernel>=7,<8",
+  "jupyterlab>=4.4,<5",
+  "matplotlib>=3.10,<4",
+  "nbclient>=0.10,<1",
+  "nbformat>=5.10,<6",
+]
+
+[tool.hatch.version]
+path = "src/gregorithm/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gregorithm"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/gregorithm",
+  "/docs",
+  "/examples",
+  "/README.md",
+  "/CHANGELOG.md",
+  "/CONTRIBUTING.md",
+  "/SECURITY.md",
+  "/LICENSE",
+  "/CITATION.cff",
+  "/THIRD_PARTY_NOTICES.md",
+  "/AUTHORS.md",
+  "/tests",
+  "/pyproject.toml",
+]
+exclude = ["__pycache__", "*.pyc", ".ipynb_checkpoints", ".gitignore"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-config --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src"]
+mypy_path = "src"
+explicit_package_bases = true
